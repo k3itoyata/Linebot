@@ -17,7 +17,7 @@ def ras(message):
         ret= mainy(text[1])
     
     elif text[0]=="2":
-        ret= cpt(text[1])
+        ret= cpt()
     
     elif text[0] == "3":
         ret= selly()
