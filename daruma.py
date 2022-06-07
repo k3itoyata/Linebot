@@ -11,8 +11,8 @@ import numpy as np
 from pathlib import Path
 import os
 
-def ras():
-    input()
+def ras(message):
+    input(message)
     #今日の日にち
     dt = datetime.datetime.today()  
     d = dt.date()
@@ -191,6 +191,3 @@ def ras():
     
         elif yesno =="n":
             print("わかりました。")
-
-if __name__ == "__main__":
-    ras()
