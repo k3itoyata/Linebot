@@ -42,8 +42,8 @@ def mainy(text):
     dt2 = datetime.datetime(day[0],day[1],day[2])
     dt3 = dt2 - dt1
     return str(yotei) + "までは、後" + str(dt3.days) + "日後です"+"\n"+\
-        str(hozon) + "に保存します" 
-
+           str(hozon) + "に保存します" 
+ 
 
 
 area_dic = {'兵庫県':'280000',}
