@@ -42,10 +42,10 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    mondo = ras(event.massage.text)
+    ras(event.massage.text)
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text= mondo))
+        TextSendMessage(text= ras))
 
 
 if __name__ == "__main__":
