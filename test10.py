@@ -19,8 +19,11 @@ def ras(message):
     elif text[0] == "3":
         ret= selly()
     
+    elif text[0] == "4":
+        ret= zeder()
+    
     elif text[0] == "5":
-        ret=mondo()
+        ret= mondo()
     else:
         ret="「数字,要件」で区切ってください"+\
             "1:予定登録, 2:予定確認, 3:天気, 4:ニュース, 5:出欠登録, 0:予定削除"
@@ -135,6 +138,18 @@ def selly():
             j= [item.replace("\u3000", "") for item in i]
     return str(j).replace(",", "")
 
+def zeder():
+    URL = "https://www.yahoo.co.jp/"
+    rest = requests.get(URL)
+
+    # BeautifulSoupにヤフーニュースのページ内容を読み込ませる
+    soup = BeautifulSoup(rest.text, "html.parser")
+
+    # ヤフーニュースの見出しとURLの情報を取得して出力する
+    data_list = soup.find_all(href=re.compile("news.yahoo.co.jp/pickup"))
+    for data in data_list:
+        return data.span.string + "\n"+\
+               data.attrs["href"] 
 def mondo():
     return  "出席:"+ "\n"+"[ "+ "https://forms.gle/uXYUTBYEti5ofuRm6"+ " ]"+"\n"+\
             "欠席:"+ "\n"+"[ "+ "https://forms.gle/ZgbsebUJgVLx8i3s7"+ " ]"+"\n"+\
