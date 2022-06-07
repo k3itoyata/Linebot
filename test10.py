@@ -4,7 +4,7 @@ def ras(message):
     text = message.split(",", 1)
     if text[0] ==1:
         ret= mainy(text[1])
-    if text[0] == 5:
+    elif text[0] == 5:
         ret=mondo()
     else:
         ret="「数字,要件」で区切ってください"+\
