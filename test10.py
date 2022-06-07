@@ -35,7 +35,7 @@ def ras(message):
     return ret
 
 def mainy(text):
-    yotei,day,hozon=text.split(",", 1,1)
+    yotei,day,hozon=text.split(",", 1)
     day=day.split(",")
     day= [int(d) for d in day]
     dt1 = datetime.datetime.today()
