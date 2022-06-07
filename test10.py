@@ -35,14 +35,13 @@ def ras(message):
     return ret
 
 def mainy(text):
-    yotei,day=text.split(",", 2)
+    yotei,day=text.split(",", 1)
     day=day.split(",")
     day= [int(d) for d in day]
     dt1 = datetime.datetime.today()
     dt2 = datetime.datetime(day[0],day[1],day[2])
     dt3 = dt2 - dt1
     return str(yotei) + "までは、後" + str(dt3.days) + "日後です" 
- 
 
 
 area_dic = {'兵庫県':'280000',}
