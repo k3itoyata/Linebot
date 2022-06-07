@@ -16,6 +16,9 @@ def ras(message):
     if text[0] =="1":
         ret= mainy(text[1])
     
+    #elif text[0]=="2":
+        #ret= cpt(text[1])
+    
     elif text[0] == "3":
         ret= selly()
     
@@ -32,13 +35,14 @@ def ras(message):
     return ret
 
 def mainy(text):
-    yotei,day=text.split(",", 1)
+    yotei,day,hozon=text.split(",", 1,1)
     day=day.split(",")
     day= [int(d) for d in day]
     dt1 = datetime.datetime.today()
     dt2 = datetime.datetime(day[0],day[1],day[2])
     dt3 = dt2 - dt1
-    return str(yotei) + "までは、後" + str(dt3.days) + "日後です"
+    return str(yotei) + "までは、後" + str(dt3.days) + "日後です"+"\n"+\
+        str(hozon) + "に保存します" 
 
 
 
