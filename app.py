@@ -42,7 +42,7 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    ras(event.massage.text)
+    ras()
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text= ras))
