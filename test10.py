@@ -43,95 +43,94 @@ def mainy(text):
     dt3 = dt2 - dt1
     return str(yotei) + "までは、後" + str(dt3.days) + "日後です" 
 
+def selly():
 
-area_dic = {'兵庫県':'280000',}
+    area_dic = {'兵庫県':'280000',}
 
     # CSV出力先
-output_file = "tenki.csv"
+    output_file = "tenki.csv"
 
     # CSVヘッダー
-header = ["都道府県","データ配信元","地方名","予報日時","天気",]
+    header = ["都道府県","データ配信元","地方名","予報日時","天気",]
 
-def main():
-    make_csv()
+    def main():
+            make_csv()
 
-def make_csv():
-    with open(output_file, 'w', encoding='utf-8') as f:
-        writer = csv.writer(f, lineterminator="\n")
-        writer.writerow(header)
+    def make_csv():
+        with open(output_file, 'w', encoding='utf-8') as f:
+            writer = csv.writer(f, lineterminator="\n")
+            writer.writerow(header)
 
             # JSONから情報を取得
-        write_lists = get_info()
+            write_lists = get_info()
 
             # CSV書き込み
-        writer.writerows(write_lists)
+            writer.writerows(write_lists)
 
-def get_info():
-    write_lists = []
-    base_url = "https://www.jma.go.jp/bosai/forecast/data/forecast/"
-    for k, v in area_dic.items():
+    def get_info():
+        write_lists = []
+        base_url = "https://www.jma.go.jp/bosai/forecast/data/forecast/"
+        for k, v in area_dic.items():
 
-        if k.find("/"):
-            prefecture = k[0:k.find("/")]
-        else:
-            prefecture = k
+            if k.find("/"):
+                prefecture = k[0:k.find("/")]
+            else:
+                prefecture = k
 
-        url = base_url + v + ".json"
+            url = base_url + v + ".json"
 
-        res = requests.get(url).json()
+            res = requests.get(url).json()
 
-        for re in res:
-            publishingOffice = re["publishingOffice"]
-            reportDatetime = re["reportDatetime"]
+            for re in res:
+                publishingOffice = re["publishingOffice"]
+                reportDatetime = re["reportDatetime"]
 
-            timeSeries = re["timeSeries"]
+                timeSeries = re["timeSeries"]
 
-            for time in timeSeries:
+                for time in timeSeries:
                     #降水確率など今回のターゲット以外は除外する
-                if 'pops' in time["areas"][0]:
-                    pass
-                elif 'temps' in time["areas"][0]:
-                    pass
-                elif 'tempsMax' in time["areas"][0]:
-                    pass
-                else:
-                    for i in range(len(time["areas"])):
+                    if 'pops' in time["areas"][0]:
+                        pass
+                    elif 'temps' in time["areas"][0]:
+                        pass
+                    elif 'tempsMax' in time["areas"][0]:
+                        pass
+                    else:
+                        for i in range(len(time["areas"])):
 
-                        local_name = time["areas"][i]["area"]["name"]
+                            local_name = time["areas"][i]["area"]["name"]
 
-                        for j in range(len(timeSeries[0]["timeDefines"])):
+                            for j in range(len(timeSeries[0]["timeDefines"])):
 
-                            if 'weathers' not in time["areas"][i]:
-                                weather = ""
-                            else:
-                                weather = time["areas"][i]["weathers"][j]
+                                if 'weathers' not in time["areas"][i]:
+                                    weather = ""
+                                else:
+                                    weather = time["areas"][i]["weathers"][j]
 
-                            if 'winds' not in time["areas"][i]:
-                                wind = ""
-                            else:
-                                wind = time["areas"][i]["winds"][j]
+                                if 'winds' not in time["areas"][i]:
+                                    wind = ""
+                                else:
+                                    wind = time["areas"][i]["winds"][j]
 
-                            if 'waves' not in time["areas"][i]:
-                                wave = ""
-                            else:
-                                wave = time["areas"][i]["waves"][j]
+                                if 'waves' not in time["areas"][i]:
+                                    wave = ""
+                                else:
+                                    wave = time["areas"][i]["waves"][j]
 
-                            timeDefine = time["timeDefines"][j]
+                                timeDefine = time["timeDefines"][j]
 
                                 # 各情報をリストに格納
-                            write_list = []
-                            write_list.append(prefecture)
-                            write_list.append(publishingOffice)
-                            write_list.append(local_name)
-                            write_list.append(timeDefine)
-                            write_list.append(weather)
-                            write_lists.append(write_list)
-    return write_lists
+                                write_list = []
+                                write_list.append(prefecture)
+                                write_list.append(publishingOffice)
+                                write_list.append(local_name)
+                                write_list.append(timeDefine)
+                                write_list.append(weather)
+                                write_lists.append(write_list)
+        write_lists()
 
-if __name__ == '__main__':
-    main()
-
-def selly():
+    if __name__ == '__main__':
+        main()
 
     filename = 'tenki.csv'
     with open(filename, encoding='utf8', newline='') as f:
