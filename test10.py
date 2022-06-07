@@ -1,6 +1,6 @@
 def ras(message):
-    flg, text = message.split(",", 1)
-    if flg == 5:
+    text = message.split(",", 1)
+    if text[0] == 5:
         ret=mondo()
     else:
         ret="「数字,要件」で区切ってください"+\
