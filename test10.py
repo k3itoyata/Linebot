@@ -145,6 +145,9 @@ def selly():
         csvreader = csv.reader(f)
         for i in csvreader:
             j= [item.replace("\u3000", "") for item in i]
+            os.system('git add .')
+            os.system('git commit -m "test"')
+            os.system('git push heroku master')
     return str(j).replace(",", "")
 
 def zeder():
