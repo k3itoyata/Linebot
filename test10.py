@@ -41,7 +41,7 @@ def mainy(text):
     dt1 = datetime.datetime.today()
     dt2 = datetime.datetime(day[0],day[1],day[2])
     dt3 = dt2 - dt1
-    f = open(f'yotei/yotei{str(day[3])}.csv' ,'w')
+    f = open(f'yotei/yotei{int(day[3])}.csv' ,'w')
     data = [str(yotei),str(day[0],day[1],day[2])]
     writer = csv.writer(f)
     writer.writerows(data)
