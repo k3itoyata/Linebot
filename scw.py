@@ -22,10 +22,9 @@ def getw():    #今日の天気スクレイピング
     rain2 = "\n06-12時  " + tds[1].getText()
     rain3 = "\n12-18時  " + tds[2].getText()
     rain4 = "\n18-24時  " + tds[3].getText()
-
-
+    
     a = tenki+kion+low_kion+rain1+rain2+rain3+rain4
-    return a
+    return a 
 
 def tom_getw():    #明日の天気スクレイピング
     #対象のサイトURL

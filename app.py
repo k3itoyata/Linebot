@@ -52,11 +52,11 @@ def callback():
 def handle_message(event):
     
     text_in = event.message.text
-    if "今日" in text_in: 
+    if "今日の天気" in text_in: 
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.getw()))
-    elif "明日" in text_in:   
+    elif "明日の天気" in text_in:   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.tom_getw()))
-    elif "愛" in text_in :
+    elif "ニュース" in text_in :
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=nyusu.nyu()))
         
     mondo = ras(event.message.text)
