@@ -11,6 +11,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
+import nyusu
 import scw 
 import os
 import requests
@@ -55,7 +56,9 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.getw()))
     elif "明日" in text_in:   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.tom_getw()))
-    
+    elif "愛" in text_in :
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=nyusu.nyu()))
+        
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,

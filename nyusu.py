@@ -13,7 +13,6 @@ import os
 
 
 def nyu():
-
     URL = "https://www.yahoo.co.jp/"
     rest = requests.get(URL)
 
@@ -26,4 +25,4 @@ def nyu():
         a= data.span.string 
         b= data.attrs["href"]
         x= a+ b
-        return x
+    return x
