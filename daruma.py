@@ -153,6 +153,9 @@ elif line == 3:
     filename = 'tenki.csv'
     with open(filename, encoding='utf8', newline='') as f:
         csvreader = csv.reader(f)
+        os.system('git add .')
+        os.system('git commit -m "test"')
+        os.system('git push heroku master')
         for i in csvreader:
             j= [item.replace("\u3000", "") for item in i]
             print(str(j).replace(",", ""))
