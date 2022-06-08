@@ -41,14 +41,8 @@ def mainy(text):
     dt1 = datetime.datetime.today()
     dt2 = datetime.datetime(day[0],day[1],day[2])
     dt3 = dt2 - dt1
-    f   = open(f'yotei/yotei{(day[3])}.csv' ,'w')
-    data = [str(yotei),str(day[0],day[1],day[2])]
-    writer = csv.writer(f)
-    writer.writerows(data)
-    f.close()
-    
-    str(yotei) + "までは、後" + str(dt3.days) + "日後です"+"\n"+\
-    str(day[3]) +"に保存します。"
+
+    return str(yotei) + "までは、後" + str(dt3.days) + "日後です"
 
 def cpt():
     files = os.listdir("./yotei")
