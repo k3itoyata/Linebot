@@ -76,11 +76,9 @@ def handle_message(event):
         yotei,day=text_in.split(",", 1)
         day=day.split(",")
         day= [int(d) for d in day]
-        f = open(f'yotei/yotei{str(day[3])}.csv' ,'w')
-        data = [str(yotei),str(day)]
-        writer = csv.writer(f)
-        writer.writerows(data)
-        f.close()
+        with open(f'yotei/yotei{str(day[3])}.csv' ,'w',encoding='utf-8') as f:
+            f.write(yotei,day)
+            
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=text_in))
         
     mondo = ras(event.message.text)
