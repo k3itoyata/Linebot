@@ -81,7 +81,7 @@ def handle_message(event):
         writer = csv.writer(f)
         writer.writerows(data)
         f.close()
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=yotei.yotei()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=text_in))
         
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
