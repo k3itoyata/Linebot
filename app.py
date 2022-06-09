@@ -71,18 +71,7 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=nyusu.nyu()))
     elif "出席" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.mondo()))
-    elif "予定登録" in text_in:
-        
-        yotei,day=text_in.split(",", 1)
-        day=day.split(",")
-        day= [int(d) for d in day]
-        with open(f'yotei/yotei{str(day[3])}.csv',encoding='utf-8') as f:
-            yotei,day= f.readlines()
-        
-        with open(f'yotei/yotei{str(day[3])}.csv' ,'w',encoding='utf-8') as f:
-            f.write(yotei,day)
-            
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=text_in))
+    
         
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
