@@ -76,6 +76,9 @@ def handle_message(event):
         yotei,day=text_in.split(",", 1)
         day=day.split(",")
         day= [int(d) for d in day]
+        with open(f'yotei/yotei{str(day[3])}.csv',encoding='utf-8') as f:
+            yotei,day= f.readlines()
+        
         with open(f'yotei/yotei{str(day[3])}.csv' ,'w',encoding='utf-8') as f:
             f.write(yotei,day)
             
