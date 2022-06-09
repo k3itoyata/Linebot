@@ -12,6 +12,14 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
+import glob
+import datetime
+import json
+import csv
+from dataclasses import replace
+import re
+import numpy as np
+from pathlib import Path
 import nyusu
 import scw 
 import os
@@ -20,6 +28,7 @@ import pprint
 import urllib.request
 from bs4 import BeautifulSoup
 import test10
+import yotei
 
 
 line_bot_api = LineBotApi('bQcAlNXxwmjINfG8jFAdWcsAj8o0k9cseC1zPiLZyJgDAoJOpHjpiYOvs0wzLuvnbb7gQC9DChens1wBX0FyKtXKHfTPj/MZjfxJpxT44rsE7x1NWpfT4fTaszZ+qFT2TUYQdo+4F7XoOus+bj/24AdB04t89/1O/w1cDnyilFU=')
@@ -62,6 +71,17 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=nyusu.nyu()))
     elif "出席" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.mondo()))
+    elif "予定登録" in text_in:
+        
+        yotei,day=text_in.split(",", 1)
+        day=day.split(",")
+        day= [int(d) for d in day]
+        f = open(f'yotei/yotei{str(day[3])}.csv' ,'w')
+        data = [str(yotei),str(day)]
+        writer = csv.writer(f)
+        writer.writerows(data)
+        f.close()
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=yotei.yotei()))
         
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
