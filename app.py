@@ -63,7 +63,7 @@ def callback():
 def handle_message(event):
     
     text_in = event.message.text
-    if "天気" in text_in: 
+    if "今日の天気" in text_in: 
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.getw()))
     elif "明日の天気" in text_in:   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.tom_getw()))
