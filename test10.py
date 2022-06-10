@@ -10,6 +10,7 @@ import re
 import numpy as np
 from pathlib import Path
 import os
+import urllib.request
 
 def ras(message):
     text = message.split(",", 1)
@@ -30,10 +31,13 @@ def ras(message):
     
     elif text[0] == "6":
         ret= daruma()
+    
+    elif text[0] == "7":
+        ret= arisaka()
         
     else:
-        ret="「数字,要件」で区切ってください"+\
-            "1:予定登録, 2:予定確認, 3:天気, 4:ニュース, 5:出欠登録, 0:予定削除"
+        ret="出席、天気、明日の天気、ニュース、()曜日"+"\n"+\
+            "のどれかを入力してください。"
             
         
     return ret
@@ -120,3 +124,8 @@ def daruma():
         b= data.attrs["href"]
         x= a+ b
     return x
+def arisaka():
+    return "1〜3限"+"\n"+"\n"+"<zoom>"+"\n"+"https://us02web.zoom.us/j/86778775630?pwd=dkVob0w0N3FnUitPWWMvdU9kY2hndz09"+"\n"+"\n"+\
+           "4〜5限"+"\n"+"\n"+"<zoom>"+"\n"+"https://us02web.zoom.us/j/86778775630?pwd=dkVob0w0N3FnUitPWWMvdU9kY2hndz09"+"\n"+"\n"+\
+           "<授業スライド>"+"\n"+"https://drive.google.com/drive/u/0/folders/0B1Mo1GBJNUCNa3pueEd5cDJwekU?resourcekey=0-udrE1VQAXJwBDyxlQbm2wA"+"\n"+"\n"+\
+           "<実習提出フォルダ>"+"\n"+"https://drive.google.com/drive/u/0/folders/1BzgZiq3n-R6wOItdKYrXNDAfNjPhUQTO"
