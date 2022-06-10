@@ -44,6 +44,9 @@ if line == 1:
     writer = csv.writer(f)
     writer.writerows(data)
     f.close()
+    os.system('git add .')
+    os.system('git commit -m "test"')
+    os.system('git push heroku master')
     
 elif line == 2:
     print("\n")
