@@ -73,7 +73,15 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.mondo()))
     elif "月曜日" in text_in:
             line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.getuyoubi()))
-        
+    elif "火曜日" in text_in:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kayoubi()))
+    elif "水曜日" in text_in:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.suiyoubi()))
+    elif "木曜日" in text_in:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.mokuyoubi()))
+    elif "金曜日" in text_in:
+            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
+    
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
         event.reply_token,
