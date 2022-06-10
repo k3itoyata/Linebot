@@ -1,7 +1,7 @@
 from test10 import ras
 
 
-from flask import Flask, request, abort
+from flask import Flask, request, abort, render_template
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -63,7 +63,7 @@ def callback():
 def handle_message(event):
     
     text_in = event.message.text
-    if "今日の天気" in text_in: 
+    if "天気" in text_in: 
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.getw()))
     elif "明日の天気" in text_in:   
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=scw.tom_getw()))
@@ -72,15 +72,16 @@ def handle_message(event):
     elif "出席" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.mondo()))
     elif "月曜日" in text_in:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.getuyoubi()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.getuyoubi()))
     elif "火曜日" in text_in:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kayoubi()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kayoubi()))
     elif "水曜日" in text_in:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.suiyoubi()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.suiyoubi()))
     elif "木曜日" in text_in:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.mokuyoubi()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.mokuyoubi()))
     elif "金曜日" in text_in:
-            line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
+    
     
     mondo = ras(event.message.text)
     line_bot_api.reply_message(

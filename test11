@@ -14,3 +14,21 @@ f.close()
     
 str(yotei) + "までは、後" + str(dt3.days) + "日後です"+"\n"+\
            str(day[3]) +"に保存します。"
+
+#____________________________________________________
+def mainy(text):
+    yotei,day=text.split(",", 1)
+    day=day.split(",")
+    day= [int(d) for d in day]
+    dt1 = datetime.datetime.today()
+    dt2 = datetime.datetime(day[0],day[1],day[2])
+    dt3 = dt2 - dt1
+
+    return str(yotei) + "までは、後" + str(dt3.days) + "日後です"
+
+def cpt():
+    files = os.listdir("./yotei")
+    for filename in files:
+        a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
+        aa=(f"{filename}:"+str(a).replace('"', ""))
+        return str(aa).replace(",","")
