@@ -124,6 +124,7 @@ def daruma():
         b= data.attrs["href"]
         x= a+ b
     return x
+
 def arisaka():
     return "1〜3限"+"\n"+"\n"+"<zoom>"+"\n"+"https://us02web.zoom.us/j/86778775630?pwd=dkVob0w0N3FnUitPWWMvdU9kY2hndz09"+"\n"+"\n"+\
            "4〜5限"+"\n"+"\n"+"<zoom>"+"\n"+"https://us02web.zoom.us/j/86778775630?pwd=dkVob0w0N3FnUitPWWMvdU9kY2hndz09"+"\n"+"\n"+\
