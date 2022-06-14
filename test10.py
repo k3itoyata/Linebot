@@ -132,4 +132,7 @@ def arisaka():
            "<実習提出フォルダ>"+"\n"+"https://drive.google.com/drive/u/0/folders/1BzgZiq3n-R6wOItdKYrXNDAfNjPhUQTO"
 
 def kawase():
-    return "https://www.netflix.com/browse"
+    return "[Netflix]"+"\n"+"https://www.netflix.com/browse"+"\n"+"\n"+\
+           "[Amazon Prime]"+"\n"+"https://www.amazon.co.jp/gp/video/storefront/ref=topnav_storetab_aiv?node=2351649051"+"\n"+"\n"+\
+           "[Disney+]"+"\n"+"https://www.disneyplus.com/ja-jp/login"+"\n"+"\n"+\
+           "[dTV]"+"\n"+"https://video.dmkt-sp.jp/?cnt=hn000065"
