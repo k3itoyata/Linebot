@@ -57,8 +57,6 @@ def cpt():
     for filename in files:
         a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
         aa=(f"{filename}:"+str(a).replace('"', ""))
-        a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-        aa=(f"{filename}:"+str(a).replace('"', ""))
         return str(aa).replace(",","")
 
 def selly():
