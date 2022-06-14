@@ -59,7 +59,7 @@ def cpt():
         aa=(f"{filename}:"+str(a).replace('"', ""))
         b= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
         bb=(f"{filename}:"+str(b).replace('"', ""))
-        return str(bb).replace(",","")
+        return str(aa)+str(bb).replace(",","")
 
 def selly():
      #対象のサイトURL
