@@ -81,6 +81,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.mokuyoubi()))
     elif "金曜日" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
+    elif "課題"   in text_in:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kadai()))
     
     
     mondo = ras(event.message.text)

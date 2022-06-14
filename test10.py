@@ -129,3 +129,10 @@ def arisaka():
            "4〜5限"+"\n"+"\n"+"<zoom>"+"\n"+"https://us02web.zoom.us/j/86778775630?pwd=dkVob0w0N3FnUitPWWMvdU9kY2hndz09"+"\n"+"\n"+\
            "<授業スライド>"+"\n"+"https://drive.google.com/drive/u/0/folders/0B1Mo1GBJNUCNa3pueEd5cDJwekU?resourcekey=0-udrE1VQAXJwBDyxlQbm2wA"+"\n"+"\n"+\
            "<実習提出フォルダ>"+"\n"+"https://drive.google.com/drive/u/0/folders/1BzgZiq3n-R6wOItdKYrXNDAfNjPhUQTO"
+
+def kadai():
+        files = os.listdir("./yotei")
+        for filename in files:
+            a= np.genfromtxt("yotei1/", encoding='utf8', dtype=None)
+            aa=("予定1:"+str(a).replace('"', ""))
+            return str(aa).replace(",","")
