@@ -131,8 +131,7 @@ def arisaka():
            "<実習提出フォルダ>"+"\n"+"https://drive.google.com/drive/u/0/folders/1BzgZiq3n-R6wOItdKYrXNDAfNjPhUQTO"
 
 def kadai():
-        files = os.listdir("./yotei")
-        for filename in files:
+            os.listdir("./yotei")
             a= np.genfromtxt("yotei1/", encoding='utf8', dtype=None)
             aa=("予定1:"+str(a).replace('"', ""))
             return str(aa).replace(",","")
