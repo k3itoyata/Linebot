@@ -34,8 +34,6 @@ def ras(message):
     
     elif text[0] == "7":
         ret= arisaka()
-    elif text[0] == "8":
-        ret= kawase()
         
     else:
         ret="出席、今日の天気、明日の天気、"+"\n"+"ニュース、(月〜金)曜日"+"\n"+\
@@ -132,22 +130,3 @@ def arisaka():
            "<授業スライド>"+"\n"+"https://drive.google.com/drive/u/0/folders/0B1Mo1GBJNUCNa3pueEd5cDJwekU?resourcekey=0-udrE1VQAXJwBDyxlQbm2wA"+"\n"+"\n"+\
            "<実習提出フォルダ>"+"\n"+"https://drive.google.com/drive/u/0/folders/1BzgZiq3n-R6wOItdKYrXNDAfNjPhUQTO"
 
-def kadai():
-        files = os.listdir("./yotei")
-        for filename in files:
-            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-            aa=(f"{filename}:"+str(a).replace('"', ""))
-            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-            aa=(f"{filename}:"+str(a).replace('"', ""))
-        return str(aa).replace(",","")
-
-def kawase():
-     files = os.listdir("./yotei")
-        for filename in files:
-            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-            aa=(f"{filename}:"+str(a).replace('"', ""))
-            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-            aa=(f"{filename}:"+str(a).replace('"', ""))
-            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
-            aa=(f"{filename}:"+str(a).replace('"', ""))
-        return str(aa).replace(",","")

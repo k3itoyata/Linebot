@@ -32,8 +32,8 @@ import jyugyou
 import yotei
 
 
-line_bot_api = LineBotApi('bQcAlNXxwmjINfG8jFAdWcsAj8o0k9cseC1zPiLZyJgDAoJOpHjpiYOvs0wzLuvnbb7gQC9DChens1wBX0FyKtXKHfTPj/MZjfxJpxT44rsE7x1NWpfT4fTaszZ+qFT2TUYQdo+4F7XoOus+bj/24AdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('2ff241c4d4eb6e6c18018f4f8b6c43a5')
+line_bot_api = LineBotApi('EPobn2l7x8wn7aEGKrbZHqB/MMN2sHax2cd+blM2u0993YZcIIO2csK/Yjp+pUhiq6hCk3T6ez8buPtNSR49gQXAz/68TUu5D2MBIEYH74PU9/y6Zz5cNeQnaYCI21kmJRFrT5zszqaXj4emBGttywdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('984e07ab505077e9d2c34e799d2ec905')
 
 app = Flask(__name__)
 
