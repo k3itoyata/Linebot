@@ -84,7 +84,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
     elif "予定" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=yotei.yotei()))
-    
+    elif "ネトフリ" in text_in:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.kawase()))
     
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
