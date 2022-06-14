@@ -34,6 +34,8 @@ def ras(message):
     
     elif text[0] == "7":
         ret= arisaka()
+    elif text[0] == "8":
+        ret= kawase()
         
     else:
         ret="出席、今日の天気、明日の天気、"+"\n"+"ニュース、(月〜金)曜日"+"\n"+\
@@ -133,6 +135,17 @@ def arisaka():
 def kadai():
         files = os.listdir("./yotei")
         for filename in files:
+            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
+            aa=(f"{filename}:"+str(a).replace('"', ""))
+            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
+            aa=(f"{filename}:"+str(a).replace('"', ""))
+        return str(aa).replace(",","")
+
+def kawase():
+     files = os.listdir("./yotei")
+        for filename in files:
+            a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
+            aa=(f"{filename}:"+str(a).replace('"', ""))
             a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
             aa=(f"{filename}:"+str(a).replace('"', ""))
             a= np.genfromtxt("yotei/" + filename, encoding='utf8', dtype=None)
