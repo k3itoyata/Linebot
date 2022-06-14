@@ -29,6 +29,7 @@ import urllib.request
 from bs4 import BeautifulSoup
 import test10
 import jyugyou
+import yotei
 
 
 line_bot_api = LineBotApi('bQcAlNXxwmjINfG8jFAdWcsAj8o0k9cseC1zPiLZyJgDAoJOpHjpiYOvs0wzLuvnbb7gQC9DChens1wBX0FyKtXKHfTPj/MZjfxJpxT44rsE7x1NWpfT4fTaszZ+qFT2TUYQdo+4F7XoOus+bj/24AdB04t89/1O/w1cDnyilFU=')
@@ -81,8 +82,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.mokuyoubi()))
     elif "金曜日" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=jyugyou.kinyoubi()))
-    elif "課題"   in text_in:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.kadai()))
+    elif "予定" in text_in:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=yotei.yotei()))
     
     
     mondo = ras(event.message.text)
