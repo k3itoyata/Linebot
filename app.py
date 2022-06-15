@@ -86,6 +86,8 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=yotei.yotei()))
     elif "サブスク" in text_in:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.kawase()))
+    elif "なかやまきんに君" in text_in:
+        line_bot_api.reply_message(event.reply_token,TextSendMessage(text=test10.uruka()))
     
     mondo = ras(event.message.text)
     line_bot_api.reply_message(
