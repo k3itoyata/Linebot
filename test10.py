@@ -136,3 +136,6 @@ def kawase():
            "[Amazon Prime]"+"\n"+"https://www.amazon.co.jp/gp/video/storefront/ref=topnav_storetab_aiv?node=2351649051"+"\n"+"\n"+\
            "[Disney+]"+"\n"+"https://www.disneyplus.com/ja-jp/login"+"\n"+"\n"+\
            "[dTV]"+"\n"+"https://video.dmkt-sp.jp/?cnt=hn000065"
+
+def uruka():
+    return "ヤー！パワー！！！"
