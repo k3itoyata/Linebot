@@ -138,4 +138,5 @@ def kawase():
            "[dTV]"+"\n"+"https://video.dmkt-sp.jp/?cnt=hn000065"
 
 def uruka():
-    return "ヤー！パワー！！！"
+    return "ヤー！パワー！！！"+"\n"+"\n"+\
+        "https://www.youtube.com/channel/UCOUu8YlbaPz0W2TyFTZHvjA/videos?view=57"
