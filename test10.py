@@ -139,4 +139,4 @@ def kawase():
 
 def uruka():
     return "ヤー！パワー！！！"+"\n"+"\n"+\
-        "https://www.youtube.com/channel/UCOUu8YlbaPz0W2TyFTZHvjA/videos?view=57"
+           "https://www.youtube.com/channel/UCOUu8YlbaPz0W2TyFTZHvjA/videos?view=57"
